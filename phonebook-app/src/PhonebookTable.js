@@ -19,18 +19,22 @@ function PhonebookTable() {
         <div>
             {phonebookData &&
                 <table className="phonebook-table">
-                    <tr>
-                        <th>name</th>
-                        <th>email</th>
-                        <th>phone</th>
-                    </tr>
-                    {phonebookData.map((entry) => {
-                        return <tr key={entry.id}>
-                                    <td>{entry.name}</td>
-                                    <td>{entry.email}</td>
-                                    <td>{entry.phone}</td>
-                                </tr>
-                    })}
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>email</th>
+                            <th>phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {phonebookData.sort((a,b) => a.name.localeCompare(b.name)).map((entry) => {
+                            return <tr key={entry.id}>
+                                        <td>{entry.name}</td>
+                                        <td>{entry.email}</td>
+                                        <td>{entry.phone}</td>
+                                    </tr>
+                        })}
+                    </tbody>
                 </table>
             }
         </div>

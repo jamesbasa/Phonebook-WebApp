@@ -1,19 +1,17 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-function PhonebookTable() {
-    const [phonebookData, setPhonebookData] = useState();
+function PhonebookTable({ phonebookData }) {
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    //         const dataJson = await response.json();
+    //         setPhonebookData(dataJson);
+    //     };
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const response = await fetch("https://jsonplaceholder.typicode.com/users");
-            const dataJson = await response.json();
-            setPhonebookData(dataJson);
-        };
-
-        fetchData()
-            .catch(console.error);
-    }, []);
+    //     fetchData()
+    //         .catch(console.error);
+    // }, []);
 
     return (
         <div>

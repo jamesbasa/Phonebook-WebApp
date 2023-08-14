@@ -12,6 +12,9 @@ function App() {
 
   return (
     <div className="App">
+      <div className="app-header">
+        <h2>Phonebook</h2>
+      </div>
       <PhonebookForm
         onSubmit={handleSubmit}
         numEntries={phonebookData.length}

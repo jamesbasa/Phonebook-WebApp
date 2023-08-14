@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 function PhonebookTable({ phonebookData }) {
     // useEffect(() => {
@@ -19,9 +19,10 @@ function PhonebookTable({ phonebookData }) {
                 <table className="phonebook-table">
                     <thead>
                         <tr>
-                            <th>name</th>
-                            <th>email</th>
-                            <th>phone</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Gender</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +31,7 @@ function PhonebookTable({ phonebookData }) {
                                         <td>{entry.name}</td>
                                         <td>{entry.email}</td>
                                         <td>{entry.phone}</td>
+                                        <td>{entry.gender}</td>
                                     </tr>
                         })}
                     </tbody>

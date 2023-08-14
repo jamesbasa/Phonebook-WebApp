@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 function PhonebookForm({ onSubmit, numEntries }) {
     const genders = {
-        male: 'male',
-        female: 'female'
+        male: 'Male',
+        female: 'Female'
     };
 
     const [name, setName] = useState('');
@@ -26,9 +26,9 @@ function PhonebookForm({ onSubmit, numEntries }) {
     }
 
     return (
-        <div>
+        <div className='phonebook-form'>
+            <h3>New Contact</h3>
             <form
-                className='phonebook-form'
                 onSubmit={handleSubmit}
             >
                 <label>Name</label>
@@ -47,7 +47,7 @@ function PhonebookForm({ onSubmit, numEntries }) {
                 />
                 <label>Phone</label>
                 <input
-                    type='text'
+                    type='number'
                     required
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
@@ -57,10 +57,10 @@ function PhonebookForm({ onSubmit, numEntries }) {
                     value={gender}
                     onChange={(e) => setGender(e.target.value)}
                 >
-                    <option value={genders.male}>{genders.male.charAt(0).toUpperCase()}</option>
-                    <option value={genders.female}>{genders.female.charAt(0).toUpperCase()}</option>
+                    <option value={genders.male}>{genders.male}</option>
+                    <option value={genders.female}>{genders.female}</option>
                 </select>
-                <button>Submit</button>
+                <button>Add Contact</button>
             </form>
         </div>
     );
